@@ -40,7 +40,7 @@ samp_time = samp_time.replace(":","-")
 
 
 if not sensor.init():
-        print "Sensor could not be initialized"
+        print("Sensor could not be initialized")
         exit(1)
 
 # We have to read values from sensor to update pressure and temperature
