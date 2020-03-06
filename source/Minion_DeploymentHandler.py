@@ -3,6 +3,7 @@
 import RPi.GPIO as GPIO
 import time
 import os
+import math
 import configparser
 
 i = 0
@@ -31,7 +32,7 @@ TotalSamples = (((Ddays*24)+Dhours)-Isample)/Srate
 print(TotalSamples)
 
 ####################################
-Samples = TotalSamples
+Samples = math.ceil(TotalSamples)
 ####################################
 
 ifswitch = "sudo python /home/pi/Documents/Minion_tools/dhcp-switch.py"
