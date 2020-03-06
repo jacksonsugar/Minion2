@@ -34,6 +34,8 @@ samp_time = samp_time.split('.',1)[0]
 samp_time = samp_time.replace("  ","_")
 samp_time = samp_time.replace(" ","_")
 samp_time = samp_time.replace(":","-")
+samp_count = str(len(os.listdir("/home/pi/Documents/minion_data/"))+1)
+samp_time = samp_count + "-" + samp_time
 
 
 if not sensor.init():
