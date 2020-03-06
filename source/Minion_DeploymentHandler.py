@@ -68,7 +68,7 @@ if __name__ == '__main__':
 		os.system('sudo python /home/pi/Documents/Minion_scripts/Init_T+P.py')
 
 
-	elif len(os.listdir('/home/pi/Documents/minion_pics')) == Samples:
+	elif len(os.listdir('/home/pi/Documents/minion_pics')) >= Samples:
         	GPIO.output(Press_IO, 0)
 	
 	elif len(os.listdir('/home/pi/Documents/minion_pics')) == Samples + 1:
