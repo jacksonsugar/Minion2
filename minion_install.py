@@ -119,7 +119,7 @@ os.chdir(ini_dir)
 os.system('sudo cp source/Keep_Me_Alive.py source/dhcp-configure.py source/dhcp-switch.py source/RTC-set.py source/Shutdown.py source/flasher.py source/avrdude_translator.py /home/pi/Documents/Minion_tools/')
 os.system('sudo cp source/ADXL345_Sampler_100Hz.py source/Temp+Pres.py source/drivers/ms5837-python/ms5837.py source/RTC_Finish.py source/Final_T+P.py source/Init_T+P.py source/Minion_DeploymentHandler.py source/Minion_image.py /home/pi/Documents/Minion_scripts')
 os.system('sudo cp source/Minion_config.ini /home/pi/Desktop')
-os.system('sudo cp source/
+os.system('sudo cp source/Remove_Before_Deployment.txt /home/pi/Documents/minion_pics/')
 
 # Set clock
 print "Appending /boot/config.txt"
