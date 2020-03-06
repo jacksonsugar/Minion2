@@ -58,14 +58,12 @@ file_name = "/home/pi/Documents/minion_data/%s_T+D.txt" % samp_time
 file = open(file_name,"w+")
 
 file.write("Temperature and Pressure @ %s\r\n" % samp_time)
-file.write("Timestamp,Pressure(mbar),T1(C),T2(C) \r\n")
+file.write("Pressure(mbar),T1(C)\r\n")
 
 # Spew readings
 while True:
 
-	timesample()
-
-        if sensor.read():
+	if sensor.read():
                 print("P: %0.1f mbar  %0.3f psi\tT: %0.2f C") % (
                 sensor.pressure(), # Default is mbar (no arguments)
                 sensor.pressure(ms5837.UNITS_psi), # Request psi
@@ -77,7 +75,7 @@ while True:
 		pressure = str(pressure)
 		temp1 = str(temp1)
 
-		file.write(samp_time +","+ pressure + "," + temp1)
+		file.write(pressure + "," + temp1)
         else:
                 print "Sensor read failed!"
                 exit(1)
