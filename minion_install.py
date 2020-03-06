@@ -95,10 +95,7 @@ os.system('sudo timedatectl set-timezone Atlantic/Reykjavik')
 os.system('sudo cat source/minion_alias.txt >> /home/pi/.bashrc')
 # Create folders
 os.system('mkdir /home/pi/Documents/Minion_tools /home/pi/Documents/minion_pics /home/pi/Documents/minion_data /home/pi/Documents/Minion_scripts')
-# Move scripts to local build
-os.system('sudo cp source/Keep_Me_Alive.py source/dhcp-configure.py source/dhcp-switch.py source/RTC-set.py source/Shutdown.py source/flasher.py source/avrdude_translator.py /home/pi/Documents/Minion_tools/')
-os.system('sudo cp source/ADXL345_Sampler_100Hz.py source/Temp+Pres.py source/drivers/ms5837-python/ms5837.py source/RTC_Finish.py source/Final_T+P.py source/Init_T+P.py source/Minion_DeploymentHandler.py source/Minion_image.py /home/pi/Documents/Minion_scripts')
-os.system('sudo cp source/Minion_config.ini /home/pi/Desktop')
+
 # Clone repos
 os.chdir('source/drivers/')
 os.system('git clone https://github.com/bluerobotics/tsys01-python.git')
@@ -117,6 +114,12 @@ os.system('sudo cp /ms5837-python/ms5837.py /home/pi/Documents/Minion_scripts/')
 os.system('sudo cp -r /tsys01-python/tsys01 /home/pi/Documents/Minion_scripts/')
 # Exit
 os.chdir(ini_dir)
+
+# Move scripts to local build
+os.system('sudo cp source/Keep_Me_Alive.py source/dhcp-configure.py source/dhcp-switch.py source/RTC-set.py source/Shutdown.py source/flasher.py source/avrdude_translator.py /home/pi/Documents/Minion_tools/')
+os.system('sudo cp source/ADXL345_Sampler_100Hz.py source/Temp+Pres.py source/drivers/ms5837-python/ms5837.py source/RTC_Finish.py source/Final_T+P.py source/Init_T+P.py source/Minion_DeploymentHandler.py source/Minion_image.py /home/pi/Documents/Minion_scripts')
+os.system('sudo cp source/Minion_config.ini /home/pi/Desktop')
+
 # Set clock
 print "Appending /boot/config.txt"
 os.system("echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/config.txt")
