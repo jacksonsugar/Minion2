@@ -16,7 +16,7 @@ def timesample():
         samp_time = samp_time.replace(" ","_")
 	samp_time = samp_time.replace(":","-")
 	samp_count = str(len(os.listdir("/home/pi/Documents/minion_data/"))+1)
-        samp_time = pic_count + "-" + samp_time
+        samp_time = samp_count + "-" + samp_time
 #	print samp_time
 
 # We must initialize the sensor before reading it
