@@ -72,6 +72,7 @@ if __name__ == '__main__':
         	GPIO.output(Press_IO, 0)
 	
 	elif len(os.listdir('/home/pi/Documents/minion_pics')) == Samples + 1:
+		GPIO.output(Press_IO, 0)
 		os.system('sudo python /home/pi/Documents/Minion_scripts/Final_T+P.py')
 
 	else:
