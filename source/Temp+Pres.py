@@ -1,10 +1,10 @@
 #!/usr/bin/python
 import ms5837
-import tsys01
+#import tsys01
 import time
 import os
 
-sensor_temp = tsys01.TSYS01()
+#sensor_temp = tsys01.TSYS01()
 
 sensor = ms5837.MS5837_30BA() # Default I2C bus is 1 (Raspberry Pi 3)
 
@@ -15,12 +15,14 @@ def timesample():
         samp_time = samp_time.replace("  ","_")
         samp_time = samp_time.replace(" ","_")
 	samp_time = samp_time.replace(":","-")
+	samp_count = str(len(os.listdir("/home/pi/Documents/minion_data/"))+1)
+        samp_time = pic_count + "-" + samp_time
 #	print samp_time
 
 # We must initialize the sensor before reading it
-if not sensor_temp.init():
-    print("Error initializing sensor")
-    exit(1)
+#if not sensor_temp.init():
+#    print("Error initializing sensor")
+#    exit(1)
 
 if not sensor.init():
         print "Sensor could not be initialized"
@@ -80,12 +82,12 @@ while True:
                 print "Sensor read failed!"
                 exit(1)
 
-	if not sensor_temp.read():
-		print("Error reading sensor")
-		exit(1)
+	#if not sensor_temp.read():
+	#	print("Error reading sensor")
+	#	exit(1)
 
-	print("Temperature_accurate: %0.2f C") % (sensor_temp.temperature())
-	print "--------------------------------------"
-	file.write("," + str(sensor_temp.temperature()) + "\r\n")
+	#print("Temperature_accurate: %0.2f C") % (sensor_temp.temperature())
+	#print "--------------------------------------"
+	#file.write("," + str(sensor_temp.temperature()) + "\r\n")
 
 	time.sleep(0.2)
