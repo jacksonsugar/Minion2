@@ -125,4 +125,4 @@ os.system("echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/config.txt")
 os.system("sudo sed -i '/# Print the IP/isudo python /home/pi/Documents/Minion_scripts/RTC_Finish.py\n\n' /etc/rc.local")
 
 # Reboot to finish kernel module config
-os.system('sudo reboot now')
+os.system('sudo shutdown now')
