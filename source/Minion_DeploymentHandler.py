@@ -68,14 +68,15 @@ if __name__ == '__main__':
 		os.system('sudo python3 /home/pi/Documents/Minion_scripts/Init_T+P.py')
 
 
-	if len(os.listdir('/home/pi/Documents/minion_pics')) == Samples:
-        GPIO.output(Press_IO, 0)
+	elif len(os.listdir('/home/pi/Documents/minion_pics')) == Samples:
+        	GPIO.output(Press_IO, 0)
 	
-	if len(os.listdir('/home/pi/Documents/minion_pics')) == Samples + 1:
+	elif len(os.listdir('/home/pi/Documents/minion_pics')) == Samples + 1:
 		os.system('sudo python3 /home/pi/Documents/Minion_scripts/Final_T+P.py')
 
-	os.system('sudo python /home/pi/Documents/Minion_scripts/Temp+Pres.py &')
-	os.system('sudo python /home/pi/Documents/Minion_scripts/Minion_image.py')
+	else:
+		os.system('sudo python /home/pi/Documents/Minion_scripts/Temp+Pres.py &')
+		os.system('sudo python /home/pi/Documents/Minion_scripts/Minion_image.py')
 
 	## Check for wifi
 
