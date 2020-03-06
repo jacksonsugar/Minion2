@@ -1,6 +1,6 @@
 # Minion2
 
-This is my simple builder for the Minion 2.5/.6 board revision
+This is my simple builder for the Minion 2.7/.9 board revision
 
 To use:
 
