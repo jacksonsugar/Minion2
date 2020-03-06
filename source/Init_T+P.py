@@ -92,18 +92,18 @@ while j <= Samples:
 
 	file = open(file_name,"a")
 
-        pressure = sensor.pressure()
-        temp1 = sensor.temperature()
+	pressure = sensor.pressure()
+	temp1 = sensor.temperature()
 
-        pressure = str(pressure)
-        temp1 = str(temp1)
+	pressure = str(pressure)
+	temp1 = str(temp1)
 
-        file.write(pressure + "," + temp1 + "\r\n")
+	file.write(pressure + "," + temp1 + "\r\n")
 
-        j = j + 1
+	j = j + 1
 
 	file.close()
 
-        time.sleep(0.2)
+	time.sleep(0.2)
 
 GPIO.output(data_rec, 0)
