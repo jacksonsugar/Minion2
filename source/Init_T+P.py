@@ -79,7 +79,7 @@ j = 0
 # Spew readings
 while j <= Samples:
 
-        if sensor.read():
+	if sensor.read():
                 print("P: %0.1f mbar  %0.3f atm\tT: %0.2f C") % (
                 sensor.pressure(), # Default is mbar (no arguments)
                 sensor.pressure(ms5837.UNITS_atm), # Request psi
