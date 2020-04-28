@@ -4,7 +4,7 @@ This is my simple builder for the Minion 2.7/.9 board revision
 
 To use:
 
-  `~$ sudo git clone https://github.com/jacksonsugar/Minion.git`
+  `~$ sudo git clone https://github.com/jacksonsugar/Minion2.git`
   
   `~$ cd Minion/`
   
