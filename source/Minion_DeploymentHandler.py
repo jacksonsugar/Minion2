@@ -65,7 +65,7 @@ def on():
 
 if __name__ == '__main__':
 
-	if len(os.listdir('/home/pi/Documents/minion_pics') ) == 0:
+	if len(os.listdir('/home/pi/Documents/minion_data') ) == 0:
 		os.system('sudo python /home/pi/Documents/Minion_scripts/Init_T+P.py')
 
 
